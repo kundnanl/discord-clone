@@ -10,7 +10,7 @@ export async function DELETE (
         const profile = await currentProfile();
 
         if (!profile ) {
-            return new NextResponse("Unauhorized", {status: 404});
+            return new NextResponse("Unauthorized", {status: 404});
         }
 
         const server = await db.server.delete({
